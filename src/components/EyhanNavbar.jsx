@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function EyhanNavbar({ brand, navigation, contact = {} }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+  const showDarkHeader = !isHome || isScrolled || mobileMenuOpen;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,10 +78,10 @@ export default function EyhanNavbar({ brand, navigation, contact = {} }) {
         </div>
       </div>
 
-      {/* Main Luxury Brand & Nav Bar (Transparent at top, solid on scroll) */}
+      {/* Main Luxury Brand & Nav Bar (Transparent at top of home, solid on scroll & subpages) */}
       <div
         className={`px-2 sm:px-8 lg:px-10 transition-[background-color,padding,border-color,box-shadow] duration-300 ${
-          isScrolled || mobileMenuOpen
+          showDarkHeader
             ? 'py-2.5 sm:py-3.5 bg-eyhan-dark/95 backdrop-blur-xl border-b border-eyhan-border shadow-2xl'
             : 'py-3 sm:py-5 bg-transparent border-b border-transparent shadow-none'
         }`}
