@@ -25,7 +25,7 @@ export default function EyhanNavbar({ brand, navigation, contact = {} }) {
         className={`overflow-hidden hidden sm:block transition-[max-height,opacity] duration-300 ${
           isScrolled
             ? 'max-h-0 py-0 opacity-0 border-transparent'
-            : 'max-h-16 py-2 px-2 sm:px-8 lg:px-10 border-b border-white/10 bg-eyhan-dark/70 backdrop-blur-md opacity-100'
+            : 'max-h-16 py-2 px-2 sm:px-8 lg:px-10 border-b border-white/10 bg-transparent opacity-100'
         } text-[11px] font-sans text-eyhan-sand/80`}
       >
         <div className="max-w-[1536px] mx-auto flex items-center justify-between gap-3">
@@ -75,12 +75,12 @@ export default function EyhanNavbar({ brand, navigation, contact = {} }) {
         </div>
       </div>
 
-      {/* Main Luxury Brand & Nav Bar (Always visible and solid on mobile) */}
+      {/* Main Luxury Brand & Nav Bar (Transparent at top, solid on scroll) */}
       <div
         className={`px-2 sm:px-8 lg:px-10 transition-[background-color,padding,border-color,box-shadow] duration-300 ${
-          isScrolled
+          isScrolled || mobileMenuOpen
             ? 'py-2.5 sm:py-3.5 bg-eyhan-dark/95 backdrop-blur-xl border-b border-eyhan-border shadow-2xl'
-            : 'py-3 sm:py-5 bg-eyhan-dark/95 sm:bg-gradient-to-b sm:from-eyhan-dark/95 sm:via-eyhan-dark/60 sm:to-transparent backdrop-blur-xl sm:backdrop-blur-none border-b border-eyhan-border/60 sm:border-transparent'
+            : 'py-3 sm:py-5 bg-transparent border-b border-transparent shadow-none'
         }`}
       >
         <div className="max-w-[1536px] mx-auto flex items-center justify-between">
