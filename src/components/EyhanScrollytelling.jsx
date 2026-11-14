@@ -46,7 +46,7 @@ export default function EyhanScrollytelling({ scrollytelling }) {
   return (
     <section className="relative py-28 bg-eyhan-dark border-b border-eyhan-borderSubtle">
       {/* Section Header */}
-      <div className="max-w-[1536px] mx-auto px-2 sm:px-8 lg:px-10 mb-16 sm:mb-24 text-center">
+      <div className="max-w-[1536px] mx-auto px-5 sm:px-8 lg:px-10 mb-16 sm:mb-24 text-center">
         <div className="inline-flex items-center justify-center gap-3 mb-4">
           <span className="w-8 h-px bg-eyhan-gold" />
           <span className="text-[10px] uppercase tracking-ultra text-eyhan-gold font-sans font-semibold">
@@ -83,7 +83,7 @@ export default function EyhanScrollytelling({ scrollytelling }) {
       </div>
 
       {/* Scrollytelling Stage: Pinned Visual Canvas on Left + Narrative Stream on Right */}
-      <div className="max-w-[1536px] mx-auto px-2 sm:px-8 lg:px-10">
+      <div className="max-w-[1536px] mx-auto px-5 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start relative">
           {/* Sticky Visual Stage (Sticks on desktop & mobile) */}
           <div className="lg:col-span-6 sticky top-20 lg:top-28 z-20">

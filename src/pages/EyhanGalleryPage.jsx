@@ -8,7 +8,7 @@ export default function EyhanGalleryPage() {
   const [activeImage, setActiveImage] = useState(null);
 
   return (
-    <div className="pt-36 pb-28 px-2 sm:px-8 lg:px-10 max-w-[1536px] mx-auto">
+    <div className="pt-36 pb-28 px-5 sm:px-8 lg:px-10 max-w-[1536px] mx-auto">
       <Helmet>
         <title>{`Visual Gallery & Estates | ${brand.name}`}</title>
       </Helmet>

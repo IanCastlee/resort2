@@ -21,7 +21,7 @@ export default function EyhanHome() {
       <EyhanHero hero={hero} villas={villas} />
 
       {/* The Sanctuary Philosophy & Overview */}
-      <section className="py-24 px-2 sm:px-8 lg:px-10 max-w-[1536px] mx-auto border-b border-eyhan-borderSubtle">
+      <section className="py-24 px-5 sm:px-8 lg:px-10 max-w-[1536px] mx-auto border-b border-eyhan-borderSubtle">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Editorial Narrative */}
           <div className="lg:col-span-6 space-y-8">
@@ -104,7 +104,7 @@ export default function EyhanHome() {
       {scrollytelling && <EyhanScrollytelling scrollytelling={scrollytelling} />}
 
       {/* Featured Private Villas Showcase */}
-      <section className="py-28 px-2 sm:px-8 lg:px-10 max-w-[1536px] mx-auto">
+      <section className="py-28 px-5 sm:px-8 lg:px-10 max-w-[1536px] mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
           <span className="text-[10px] uppercase tracking-ultra text-eyhan-gold font-sans block">
             Exclusive Residences
@@ -128,7 +128,7 @@ export default function EyhanHome() {
 
       {/* Haute Experiences Carousel/Grid */}
       <section className="py-28 bg-eyhan-surface border-y border-eyhan-border">
-        <div className="max-w-[1536px] mx-auto px-2 sm:px-8 lg:px-10">
+        <div className="max-w-[1536px] mx-auto px-5 sm:px-8 lg:px-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <span className="text-[10px] uppercase tracking-ultra text-eyhan-gold font-sans block mb-2">
@@ -178,7 +178,7 @@ export default function EyhanHome() {
       </section>
 
       {/* Bespoke Testimonials */}
-      <section className="py-28 px-2 sm:px-8 lg:px-10 max-w-5xl mx-auto text-center space-y-12">
+      <section className="py-28 px-5 sm:px-8 lg:px-10 max-w-5xl mx-auto text-center space-y-12">
         <span className="text-[10px] uppercase tracking-ultra text-eyhan-gold font-sans block">
           Private Guest Accolades
         </span>
