@@ -28,7 +28,7 @@ export default function EyhanNavbar({ brand, navigation, contact = {} }) {
         className={`overflow-hidden hidden sm:block transition-[max-height,opacity] duration-300 ${
           isScrolled
             ? 'max-h-0 py-0 opacity-0 border-transparent'
-            : 'max-h-16 py-2 px-5 sm:px-8 lg:px-10 border-b border-white/10 bg-transparent opacity-100'
+            : 'max-h-16 py-2 px-4 sm:px-8 lg:px-10 border-b border-white/10 bg-transparent opacity-100'
         } text-[11px] font-sans text-eyhan-sand/80`}
       >
         <div className="max-w-[1536px] mx-auto flex items-center justify-between gap-3">
@@ -80,7 +80,7 @@ export default function EyhanNavbar({ brand, navigation, contact = {} }) {
 
       {/* Main Luxury Brand & Nav Bar (Transparent at top of home, solid on scroll & subpages) */}
       <div
-        className={`px-5 sm:px-8 lg:px-10 transition-[background-color,padding,border-color,box-shadow] duration-300 ${
+        className={`px-4 sm:px-8 lg:px-10 transition-[background-color,padding,border-color,box-shadow] duration-300 ${
           showDarkHeader
             ? 'py-2.5 sm:py-3.5 bg-eyhan-dark/95 backdrop-blur-xl border-b border-eyhan-border shadow-2xl'
             : 'py-3 sm:py-5 bg-transparent border-b border-transparent shadow-none'

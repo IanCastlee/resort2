@@ -56,7 +56,7 @@ export default function EyhanHero({ hero, villas = [] }) {
       <div className="h-16 sm:h-20 lg:h-24 shrink-0 z-10" />
 
       {/* Centerpiece Headline (Unique Experience — ENJOY WITH US) */}
-      <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 lg:px-10 text-center my-auto py-3 sm:py-6">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 text-center my-auto py-3 sm:py-6">
         <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-normal tracking-wide drop-shadow-2xl mb-1.5 sm:mb-3">
           Unique Experience
         </h1>
@@ -76,7 +76,7 @@ export default function EyhanHero({ hero, villas = [] }) {
       </div>
 
       {/* Bottom Booking Picker - Ultra Luxury Dark Glass Console (Fully Mobile & Tablet Responsive) */}
-      <div className="relative z-20 w-full max-w-[1536px] mx-auto px-5 sm:px-6 lg:px-10 pb-3 sm:pb-6 lg:pb-8 shrink-0">
+      <div className="relative z-20 w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-10 pb-3 sm:pb-6 lg:pb-8 shrink-0">
         <form
           onSubmit={handleCheckAvailability}
           className="bg-eyhan-dark/95 backdrop-blur-2xl border border-eyhan-gold/40 shadow-[0_20px_50px_rgba(0,0,0,0.85)] rounded-sm grid grid-cols-2 md:grid-cols-5 overflow-hidden ring-1 ring-white/10"
