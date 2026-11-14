@@ -50,10 +50,10 @@ export default function EyhanDemoModal() {
           No real bookings, reservations, or financial transactions will be processed.
         </div>
 
-        <div className="flex justify-end w-full">
+        <div className="flex justify-start w-full">
           <button
             onClick={handleDismiss}
-            className="w-full sm:w-auto text-center px-4 sm:px-8 py-3 sm:py-3.5 bg-eyhan-gold hover:bg-eyhan-goldLight text-eyhan-dark font-sans text-[11px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.22em] font-semibold transition-all shadow-md whitespace-normal leading-snug"
+            className="w-fit text-left px-5 sm:px-8 py-2.5 sm:py-3.5 bg-eyhan-gold hover:bg-eyhan-goldLight text-eyhan-dark font-sans text-[11px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.20em] font-semibold transition-all shadow-md whitespace-normal leading-snug"
           >
             I Understand, Open Demo Website
           </button>
