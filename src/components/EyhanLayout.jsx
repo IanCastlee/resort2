@@ -2,10 +2,12 @@ import PropTypes from 'prop-types';
 import EyhanNavbar from './EyhanNavbar';
 import EyhanFooter from './EyhanFooter';
 import EyhanDemoModal from './EyhanDemoModal';
+import EyhanCurtainLoader from './EyhanCurtainLoader';
 
 export default function EyhanLayout({ brand, navigation, contact, children }) {
   return (
     <div className="min-h-screen flex flex-col bg-eyhan-dark text-eyhan-sand selection:bg-eyhan-gold selection:text-eyhan-dark">
+      <EyhanCurtainLoader brand={brand} />
       <EyhanDemoModal />
       <EyhanNavbar brand={brand} navigation={navigation} contact={contact} />
       <main className="flex-grow">{children}</main>
