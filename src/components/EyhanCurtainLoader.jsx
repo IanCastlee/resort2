@@ -3,64 +3,70 @@ import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
 /**
- * EyhanCurtainLoader
- * Ultra-luxury theater/hotel split-curtain transition loader.
- * Plays an elegant opening reveal on initial site mount / refresh,
- * and glides closed and open smoothly during route changes.
+ * EyhanCurtainLoader (E-YHAN Resort & Private Reserve)
+ * Style: Ultra-Luxury Velvet Noir & Imperial Gold Split-Curtain Reveal (Horizontal Parting).
+ * Features:
+ * - Grand entrance reveal on initial site open and refresh.
+ * - Velvet curtain transition between route changes.
+ * - StrictMode safe (never gets stuck on home or any page).
+ * - Safety fallback timer guarantees reveal under all conditions.
  */
 export default function EyhanCurtainLoader({ brand }) {
   const location = useLocation();
-  // 'closed' on first load so user gets the grand entrance reveal
+  // Always start 'closed' on page load/refresh so the user sees the luxury loader first
   const [stage, setStage] = useState('closed'); // 'closed' | 'opening' | 'idle'
-  const isFirstMount = useRef(true);
-  const prevPathname = useRef(location.pathname);
+  const isFirstRoute = useRef(true);
+  const currentPath = useRef(location.pathname);
 
-  // Initial site load / refresh grand entrance
+  // 1. Initial site open / refresh grand entrance reveal
   useEffect(() => {
-    if (isFirstMount.current) {
-      isFirstMount.current = false;
+    // Stage starts 'closed', hold emblem briefly, then part the curtains
+    const openTimer = setTimeout(() => {
+      setStage('opening');
+    }, 750);
 
-      // Hold the illuminated crest briefly, then part the curtains
-      const openTimer = setTimeout(() => {
-        setStage('opening');
-      }, 700);
+    const idleTimer = setTimeout(() => {
+      setStage('idle');
+    }, 1500);
 
-      const idleTimer = setTimeout(() => {
-        setStage('idle');
-      }, 1450);
-
-      return () => {
-        clearTimeout(openTimer);
-        clearTimeout(idleTimer);
-      };
-    }
+    return () => {
+      clearTimeout(openTimer);
+      clearTimeout(idleTimer);
+    };
   }, []);
 
-  // Route change curtain transitions
+  // 2. Route change curtain transitions
   useEffect(() => {
-    // Skip if pathname didn't change or if it's still the initial mount cycle
-    if (location.pathname === prevPathname.current) {
+    // Skip the initial mount route trigger (handled by the effect above)
+    if (isFirstRoute.current) {
+      isFirstRoute.current = false;
+      currentPath.current = location.pathname;
       return;
     }
-    prevPathname.current = location.pathname;
+
+    // Skip if user clicked the same page link they are already viewing
+    if (location.pathname === currentPath.current) {
+      return;
+    }
+    currentPath.current = location.pathname;
 
     // Phase 1: Curtains glide inwards to close
     setStage('closed');
 
-    // Smoothly reset scroll position while curtain is fully shut
+    // Smoothly reset scroll position to top while curtain is fully closed
     const scrollTimer = setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'instant' });
-    }, 280);
+    }, 260);
 
     // Phase 2: Hold emblem briefly, then part the curtains
     const openTimer = setTimeout(() => {
       setStage('opening');
     }, 600);
 
-    // Phase 3: Transition fully finished, unmount loader
+    // Phase 3: Transition finished, unmount from DOM
     const idleTimer = setTimeout(() => {
       setStage('idle');
-    }, 1250);
+    }, 1300);
 
     return () => {
       clearTimeout(scrollTimer);
@@ -68,6 +74,16 @@ export default function EyhanCurtainLoader({ brand }) {
       clearTimeout(idleTimer);
     };
   }, [location.pathname]);
+
+  // 3. Absolute safety watchdog: Guarantee the loader CANNOT stay stuck under any circumstances
+  useEffect(() => {
+    if (stage !== 'idle') {
+      const watchdog = setTimeout(() => {
+        setStage('idle');
+      }, 2400);
+      return () => clearTimeout(watchdog);
+    }
+  }, [stage]);
 
   if (stage === 'idle') return null;
 
