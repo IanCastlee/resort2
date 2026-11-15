@@ -38,7 +38,7 @@ export default function EyhanHero({ hero, villas = [] }) {
   };
 
   return (
-    <section className="relative min-h-[100dvh] lg:h-screen w-full flex flex-col justify-between bg-eyhan-dark">
+    <section className="relative min-h-[100dvh] lg:h-screen w-full max-w-full overflow-hidden flex flex-col justify-between bg-eyhan-dark">
       {/* Background Image: Night-lit luxury infinity pool */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img

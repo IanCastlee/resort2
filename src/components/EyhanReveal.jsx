@@ -50,16 +50,16 @@ export default function EyhanReveal({
   const getInitialClass = () => {
     switch (direction) {
       case 'left':
-        return '-translate-x-12 opacity-0';
+        return 'translate-y-6 sm:translate-y-0 sm:-translate-x-12 opacity-0';
       case 'right':
-        return 'translate-x-12 opacity-0';
+        return 'translate-y-6 sm:translate-y-0 sm:translate-x-12 opacity-0';
       case 'scale':
         return 'scale-95 opacity-0';
       case 'fade':
         return 'opacity-0';
       case 'up':
       default:
-        return 'translate-y-12 opacity-0';
+        return 'translate-y-8 sm:translate-y-12 opacity-0';
     }
   };
 

@@ -44,7 +44,7 @@ export default function EyhanScrollytelling({ scrollytelling }) {
   };
 
   return (
-    <section className="relative py-28 bg-eyhan-dark border-b border-eyhan-borderSubtle">
+    <section className="relative py-28 bg-eyhan-dark border-b border-eyhan-borderSubtle w-full max-w-full overflow-hidden">
       {/* Section Header */}
       <div className="max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-10 mb-16 sm:mb-24 text-center">
         <div className="inline-flex items-center justify-center gap-3 mb-4">
@@ -157,7 +157,7 @@ export default function EyhanScrollytelling({ scrollytelling }) {
                   ref={(el) => (chapterRefs.current[idx] = el)}
                   className={`transition-all duration-700 p-6 sm:p-10 rounded-2xl border ${
                     isActive
-                      ? 'bg-eyhan-surface/90 border-eyhan-gold/60 shadow-goldGlow scale-[1.02]'
+                      ? 'bg-eyhan-surface/90 border-eyhan-gold/60 shadow-goldGlow scale-100 sm:scale-[1.02]'
                       : 'bg-eyhan-surface/30 border-eyhan-borderSubtle opacity-60 hover:opacity-90'
                   }`}
                 >

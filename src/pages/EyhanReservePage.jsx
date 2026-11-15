@@ -14,7 +14,7 @@ export default function EyhanReservePage() {
   const { brand, villas, contact } = eyhanResortData;
 
   return (
-    <div className="pt-36 pb-28 px-4 sm:px-8 lg:px-10 max-w-[1536px] mx-auto">
+    <div className="pt-36 pb-28 px-4 sm:px-8 lg:px-10 max-w-[1536px] mx-auto w-full max-w-full overflow-hidden">
       <Helmet>
         <title>{`Reserve An Estate | ${brand.name}`}</title>
       </Helmet>
