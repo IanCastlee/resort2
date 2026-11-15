@@ -4,10 +4,9 @@
 
 @layer base {
   html, body {
-    overflow-x: hidden;
-    max-width: 100vw;
+    overflow-x: clip;
+    max-width: 100%;
     width: 100%;
-    position: relative;
     -webkit-overflow-scrolling: touch;
   }
   html {
@@ -18,10 +17,8 @@
     color: #e8e2d5;
   }
   #root {
-    overflow-x: hidden;
-    max-width: 100vw;
+    max-width: 100%;
     width: 100%;
-    position: relative;
   }
 }
 

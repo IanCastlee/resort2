@@ -44,7 +44,7 @@ export default function EyhanScrollytelling({ scrollytelling }) {
   };
 
   return (
-    <section className="relative py-28 bg-eyhan-dark border-b border-eyhan-borderSubtle w-full max-w-full overflow-hidden">
+    <section className="relative py-28 bg-eyhan-dark border-b border-eyhan-borderSubtle w-full">
       {/* Section Header */}
       <div className="max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-10 mb-16 sm:mb-24 text-center">
         <div className="inline-flex items-center justify-center gap-3 mb-4">

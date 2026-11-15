@@ -6,11 +6,11 @@ import EyhanCurtainLoader from './EyhanCurtainLoader';
 
 export default function EyhanLayout({ brand, navigation, contact, children }) {
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col bg-eyhan-dark text-eyhan-sand selection:bg-eyhan-gold selection:text-eyhan-dark relative">
+    <div className="min-h-screen w-full flex flex-col bg-eyhan-dark text-eyhan-sand selection:bg-eyhan-gold selection:text-eyhan-dark relative">
       <EyhanCurtainLoader brand={brand} />
       <EyhanDemoModal />
       <EyhanNavbar brand={brand} navigation={navigation} contact={contact} />
-      <main className="flex-grow w-full max-w-full overflow-x-hidden relative">{children}</main>
+      <main className="flex-grow w-full">{children}</main>
       <EyhanFooter brand={brand} navigation={navigation} contact={contact} />
     </div>
   );
